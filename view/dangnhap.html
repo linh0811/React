@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,17 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/ctsp.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="./css/dangnhap.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="./css/trangchu.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="./css/sanpham.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="./css/sanpham1.css" type="text/css" media="screen" />
- 
-    <link rel="stylesheet" href="./css/lh1.css" type="text/css" media="screen" />
-    <!-- <link rel="stylesheet" href="./css/tttc.css" type="text/css" media="screen" /> -->
-    <link rel="stylesheet" href="./css/giohang.css" type="text/css" media="screen" />
-    <!-- <link rel="stylesheet" href="./css/lsmh.css" type="text/css" media="screen" /> -->
-    <!-- <link rel="stylesheet" href="./css/thanhtoan.css" type="text/css" media="screen" /> -->
+    <link rel="stylesheet" href="dangnhap.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="trangchu.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="sanpham.css" type="text/css" media="screen" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
@@ -30,7 +21,7 @@
             margin: 0;
             padding: 0;
             font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-style: normal;
         }
        
@@ -145,7 +136,7 @@
             width: 200px;
             height: 40px;
             background-color: rgb(255, 255, 255);
-            color: #000000;
+            color: #fff;
         }
         
         .timkiembuton {
@@ -213,7 +204,7 @@
         }
         
         button {
-            background: linear-gradient(to right, rgb(0, 0, 0) 50%, red 50%);
+            background: linear-gradient(to right, black 50%, red 50%);
             background-size: 200% 100%;
             background-position: right bottom;
             border: none;
@@ -514,7 +505,161 @@
 </head>
 
 <body >
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+    <div class="container">
+        <header>
+            <img class="logo" src="../img/logo.png " width="300px">
+            <input type="text" placeholder="Tìm kiếm sản phẩm" class="timkiem">
+            <img class="timkiembuton" src="../img/timkiem.png" width="10px" height="5px">
+            <div class=" user ">
+
+                <ul>
+                    <li>
+                        <a href="trangchu.html"> Trang chủ<a>
+                        <a href="sanpham.html"> Sản phẩm </a>
+
+                        <a href="lienhe1.html"> Liên hệ</a>
+                        <a href="# "> Giới thiệu</a>
+
+               
+                        <a href="dangnhap.html">Đăng nhập </a>
+                        <a href="giohang.html"><img src="../img/cart.png" width="5px" height="30px" class="giohang"> </a>
+                    </li>
+                </ul>
+
+
+                <div class="dropdown">
+                    <div class="icon" onclick="toggleDropdown()">
+                        <span class="icon-bar">--------</span>
+                        <span class="icon-bar">---</span>
+                        <span class="icon-bar">----</span>
+                    </div>
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <!-- Nội dung của menu xổ xuống -->
+                        <a href="#">Trang chủ</a>
+                        <a href="#">Giới thiệu</a>
+                        <a href="#">Sản phẩm</a>
+                        <a href="#">Tài khoản pretium</a>
+                        <a href="#">Liên hệ</a>
+                        <a href="#">Thanh Toán </a>
+                        <a href="#">Đăng nhập </a>
+                        <a href="#">Đăng ký </a>
+
+                    </div>
+                </div>
+                <script>
+                    function toggleDropdown() {
+                        var dropdownMenu = document.getElementById("dropdown-menu");
+                        if (dropdownMenu.style.display === "none") {
+                            dropdownMenu.style.display = "block";
+                        } else {
+                            dropdownMenu.style.display = "none";
+                        }
+                    }
+                </script>
+        </header>
+        <!-- <div class="slide">
+        <div class="imgslide"><img src="img/slide1.png" width="100%" height="500px" id="hinh" align="center"></div>
+        <div class="button">
+            <img src="img/left.png" onclick="prev()" width="50px" height="50px" class="left " onclick="prev()">
+            <img src="img/right.png" onclick="next()" width="50px" height="50px" class="right " onclick="next()">
+
+        </div>
+        <script>
+            var index = 0;
+            var arr_hinh = [
+
+                "img/slide1.png",
+                "img/slide2.png",
+                "img/slide4.png",
+                "img/slide6.png",
+                "img/slide5.png"
+            ];
+
+            function next() {
+                index++;
+                if (index > arr_hinh.length - 1) {
+                    index = 0;
+                }
+                document.getElementById("hinh").src = arr_hinh[index];
+
+            }
+
+            function prev() {
+                index--;
+                if (index < 0) {
+                    index = arr_hinh.length - 1;
+                }
+                document.getElementById("hinh").src = arr_hinh[index];
+            }
+            setInterval("next()", 2000);
+        </script> -->
+
+
+
+   
+
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h2 class="mb-4 pb-3">Đăng nhập</h2>
+											<div class="form-group">
+												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+											<a href="#" class="btn mt-4">submit</a>
+                            				<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
+				      					</div>
+			      					</div>
+			      				</div>
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+											<h2 class="mb-4 pb-3">Đăng ký </h2>
+											<div class="form-group">
+												<input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+												<i class="input-icon uil uil-user"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+												<i class="input-icon uil uil-at"></i>
+											</div>	
+											<div class="form-group mt-2">
+												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+												<i class="input-icon uil uil-lock-alt"></i>
+											</div>
+                                            <div class="form-group">
+												<input type="phone" name="logphone" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+												<i class="input-icon uil uil-user"></i>
+											</div>	
+											<a href="#" class="btn mt-4">submit</a>
+				      					</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+        
+        </div>
 </body>
+
 </html>
+<script src="../js/form.js">
+</script>

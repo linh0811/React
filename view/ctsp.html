@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sanpham.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="trangchu.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="ctsp.css" type="text/css" media="screen" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="../js/demo.js"></script>
+    <style>
+  
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+        }
+       
+
+
+        h2 {
+            margin-top: 40px;
+        }
+        
+        .container {
+            width: 100%;
+            margin: auto;
+        }
+        
+        .container>header {
+            background-color: rgb(237, 159, 40);
+            height: 100px;
+            width: 100%;
+            position: relative;
+        }
+        
+        .container>header>.logo {
+            width: 150px;
+            position: absolute;
+            left: 100px;
+            top: -25px;
+        }
+        
+        .container>header>.user {
+            position: absolute;
+            top: 40px;
+            right: 100px;
+        }
+        
+        .container>header>.user>ul {
+            display: flex;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            gap: 5px;
+        }
+        
+        .container>header>.user>ul>li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        .data {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 20px;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .sp {
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* .listsp {} */
+        
+        #bv>.listsp>.data {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 20px;
+        }
+        
+        footer {
+            background-color: rgb(237, 159, 40);
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        section {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .sp1 {
+            background-color: rgb(255, 253, 253);
+            position: relative;
+            display: inline-block;
+            height: 350px;
+        }
+        
+        .data1 {
+            display: grid;
+            grid-template-columns: 410px 410px 410px;
+            gap: 10px;
+            height: 429px;
+            width: 100%;
+        }
+        
+        .timkiem {
+            text-align: center;
+            border: solid 0.5px rgb(255, 255, 255);
+            border-radius: 8px;
+            position: absolute;
+            left: 250px;
+            top: 30px;
+            width: 200px;
+            height: 40px;
+            background-color: rgb(255, 255, 255);
+            color: #fff;
+        }
+        
+        .timkiembuton {
+            position: absolute;
+            left: 258px;
+            top: 37px;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .dangnhap {
+            color: grey;
+            text-decoration: none;
+            position: relative;
+            top: 15px;
+            right: 10px;
+        }
+        
+        .banner {
+            width: 200px;
+            background-color: red;
+        }
+        
+        .fa-chevron-circle-left {
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            font-size: 35px;
+            color: rgb(0, 0, 0);
+        }
+        
+        .fa-chevron-circle-right {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            font-size: 35px;
+            color: rgb(0, 0, 0);
+        }
+        
+        .slide {
+            width: 100%;
+            height: 500px;
+            background-color: blueviolet;
+        }
+        
+        .muiten-left {
+            position: absolute;
+            right: 400px;
+            top: 520px;
+        }
+        
+        #muiten {
+            width: 30px;
+            /* Đảm bảo kích thước của hình tròn */
+            height: 30px;
+            /* Đảm bảo kích thước của hình tròn */
+            background-color: #000000;
+            /* Màu nền */
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            transition: color 0.3s ease;
+            /* Đảm bảo hình tròn */
+        }
+        
+        button {
+            background: linear-gradient(to right, black 50%, red 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-position: left bottom;
+        }
+        
+        #muiten:hover {
+            color: transparent;
+            background: linear-gradient(to right, #010201, #008CBA);
+            -webkit-background-clip: text;
+            background-clip: text;
+            transition: background-position 0.3s ease;
+            background-size: 200% auto;
+            background-position: right;
+        }
+        
+        .muiten-right {
+            position: absolute;
+            right: 450px;
+            top: 520px;
+        }
+        
+        .xemngay {
+            position: absolute;
+            right: 375px;
+            top: 550px;
+        }
+        
+        .sp>img {
+            width: 300PX;
+            height: 329px;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: none;
+        }
+        
+        .icon {
+            background-color: #000;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 8px 10px;
+            width: 40px;
+            height: 30px;
+        }
+        
+        .giohang {
+            position: absolute;
+            right: -30px;
+            top: -10px;
+            width: 30px;
+        }
+        
+        .icon-bar {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            margin-bottom: 4px;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #f614fa;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            z-index: 1;
+        }
+        
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            color: #ffffff;
+            padding: 8px 0;
+            text-decoration: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+        
+        image {
+            max-width: 100%;
+        }
+        
+        main {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media only screen and (max-width:1000px) {
+            .container {
+                width: 99%
+            }
+            .data {
+                grid-template-columns: auto auto auto;
+            }
+        }
+        
+        @media only screen and (max-width:800px) {
+            .container {
+                width: 99%
+            }
+            .container>header>.logo {
+                width: 150px;
+                position: absolute;
+                right: 10px;
+                top: -10px;
+            }
+            .data {
+                width: 700px;
+                grid-template-columns: auto auto;
+            }
+            .data1 {
+                width: 750px;
+                grid-template-columns: 350px 350px;
+                min-height: 800px;
+                margin-left: 20px;
+            }
+            .dangnhap {
+                display: none;
+            }
+            .giohang {
+                position: absolute;
+                right: -170px;
+                top: -40px;
+                width: 100px;
+            }
+            /* .data {
+                grid-template-columns: auto;
+                margin-left: 50px;
+                margin-right: 50px;
+            } */
+            .sp {
+                width: 250px;
+                margin-right: 10px;
+                margin-left: 70px;
+            }
+            .sp1 {
+                width: 300px;
+                margin-right: 50px;
+                margin-left: 50px;
+            }
+            .dropdown {
+                display: block;
+                position: absolute;
+                left: -500px;
+                top: 0px;
+            }
+            .body1 {
+                width: 400px;
+                height: auto;
+            }
+            /* .data1 {
+                display: block;
+                width: 300px;
+                height: auto;
+            } */
+            footer {
+                width: 800px;
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+            .column {
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            nav {
+                display: none;
+            }
+            .icon-bar {
+                display: block;
+                position: absolute;
+                left: 10px;
+                top: 5px;
+                z-index: 10;
+            }
+            .sp>img {
+                width: 250PX;
+                height: 329px;
+            }
+            .timkiem {
+                display: none;
+            }
+            .timkiem2 {
+                display: none;
+            }
+        }
+        
+        @media only screen and (max-width:400px) {
+            .container {
+                width: 99%;
+            }
+            .dangnhap {
+                display: none;
+            }
+            .giohang {
+                position: absolute;
+                right: -170px;
+                top: -20px;
+                width: 50px;
+            }
+            /* .data {
+                grid-template-columns: auto;
+                margin-left: 50px;
+                margin-right: 50px;
+            } */
+            .data {
+                display: block;
+                width: 300px;
+            }
+            .sp {
+                width: 250px;
+                margin-right: 10px;
+                margin-left: 70px;
+            }
+            .sp1 {
+                width: 300px;
+                margin-right: 50px;
+                margin-left: 20px;
+            }
+            .dropdown {
+                display: block;
+                position: absolute;
+                left: -150px;
+                top: 0px;
+            }
+            .body1 {
+                width: 400px;
+                height: auto;
+            }
+            .data1 {
+                display: block;
+                width: 300px;
+                height: auto;
+            }
+            footer {
+                width: 400px;
+                display: block;
+            }
+            .column {
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            nav {
+                display: none;
+            }
+            .sub-menu {
+                position: fixed;
+                top: 0px;
+                right: 5px;
+            }
+            .container>header>.logo {
+                width: 150px;
+                position: absolute;
+                left: 120px;
+                top: 0px;
+            }
+            .icon-bar {
+                display: block;
+                position: absolute;
+                left: 10px;
+                top: 5px;
+                z-index: 10;
+            }
+            .sp>img {
+                width: 250PX;
+                height: 329px;
+            }
+            h2 {
+                width: 200px;
+                margin-left: 50px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body >
+    <div class="container">
+        <header>
+            <img class="logo" src="../img/logo.png " width="300px">
+            <input type="text" placeholder="Tìm kiếm sản phẩm" class="timkiem">
+            <img class="timkiembuton" src="../img/timkiem.png" width="10px" height="5px">
+            <div class=" user ">
+
+                <ul>
+                    <li>
+                        <a href="trangchu.html"> Trang chủ<a>
+                        <a href="sanpham.html"> Sản phẩm </a>
+
+                        <a href="lienhe1.html"> Liên hệ</a>
+                        <a href="# "> Giới thiệu</a>
+
+               
+                        <a href="dangnhap.html">Đăng nhập </a>
+                        <a href="giohang.html"><img src="../img/cart.png" width="5px" height="30px" class="giohang"> </a>
+                    </li>
+                </ul>
+
+
+                <div class="dropdown">
+                    <div class="icon" onclick="toggleDropdown()">
+                        <span class="icon-bar">--------</span>
+                        <span class="icon-bar">---</span>
+                        <span class="icon-bar">----</span>
+                    </div>
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <!-- Nội dung của menu xổ xuống -->
+                        <a href="#">Trang chủ</a>
+                        <a href="#">Giới thiệu</a>
+                        <a href="#">Sản phẩm</a>
+                        <a href="#">Tài khoản pretium</a>
+                        <a href="#">Liên hệ</a>
+                        <a href="#">Thanh Toán </a>
+                        <a href="#">Đăng nhập </a>
+                        <a href="#">Đăng ký </a>
+
+                    </div>
+                </div>
+                <script>
+                    function toggleDropdown() {
+                        var dropdownMenu = document.getElementById("dropdown-menu");
+                        if (dropdownMenu.style.display === "none") {
+                            dropdownMenu.style.display = "block";
+                        } else {
+                            dropdownMenu.style.display = "none";
+                        }
+                    }
+                </script>
+        </header>
+
+
+
+
+        <main>
+            <section class="chitiet">
+
+                <div class="detail">
+                    <div class="imgleft">
+                        <div class="inner" id="anhjs">
+
+                            <img id="ab" src="./img/anh1.webp" width="100px ">
+                            <div class="imgSmall ">
+                                <img onclick="chonanh(0) " src="img/anh1.webp ">
+                                <img onclick="chonanh(1) " src="img/anh1.webp ">
+                                <img onclick="chonanh(2) " src="img/anh1.webp ">
+                                <img onclick="chonanh(3); " src="img/anh1.webp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                    <h1>Bánh Xoài Cam Lâm- Hũ 250g</h1>
+                        <p class="gia">
+                            <del>990.000₫ </del>540.000₫</p>
+                            <p class="ttct">Bánh Xoài Cam Lâm – Sản phẩm sử dụng 100% giống Xoài đặc sản vùng Cam Lâm –  Khánh Hoà, được canh tác theo hướng thuận tự nhiên. Hương vị, màu sắc và thành phần dinh dưỡng của sản phẩm có thể thay đổi nhẹ theo mùa. Nhưng đừng lo, CAMLAMONLINE luôn đóng gói sản phẩm với chất lượng cao nhất.
+
+                                Bánh Xoài với hương vị chua chua – ngọt thanh – thơm nức của xoài. Ăn vào dẻo dẻo – dai dai rất lạ miệng.</p>
+                       <input type="number"value="1" class="soluong"> <button class="themgh"> Thêm vào giỏ hàng</button> <br>
+                        <P>Danh mục: Sản Phẩm Hot<br> Từ khóa: 2024,Xoai,<br> Bánh xoài </P>
+                    </div>
+
+                </div>
+            </section>
+            <div class="container1">
+                <div class="button-container">
+                    <p class="tab-button" onclick="showTab('description')">Mô tả</p>
+                    <p class="tab-button" onclick="showTab('reviews')">Đánh giá</p>
+                </div>
+        
+                <div id="description" class="tab-content">
+                    <h2>Mô tả</h2>
+                    <p><strong>Thông tin sản phẩm:</strong></p>
+                    <ul>
+                        <li>Xuất xứ: Cam Lâm</li>
+                        <li>Kích thước hộp: Hộp nhựa</li>
+                        <li>Thành phần: Xoài 95%</li>
+                        <li>HSD: 18 tháng</li>
+                    </ul>
+                    <p><strong>Cách sử dụng:</strong> ăn trực tiếp</p>
+                    <p><strong>Bảo quản:</strong> Nơi không ráo, tránh tiếp xúc trực tiếp đến ánh nắng mặt trời</p>
+                    <p><strong>Lưu ý:</strong> Không sử dụng sản phẩm hết hạn và có dấu hiệu móc hỏng.</p>
+                </div>
+        
+                <div id="reviews" class="tab-content" style="display: none;">
+                    <h2>Đánh giá</h2>
+                    <p>Chưa có đánh giá nào.</p>
+                    <!-- Ví dụ về đánh giá có rating -->
+                    <div class="review">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>Rất tốt! Sản phẩm đúng như mô tả.</p>
+                    </div>
+                    <!-- Form đánh giá -->
+                    <form class="review-form">
+                        <div class="form-group">
+                            <label for="name">Tên:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Nhận xét của bạn:</label>
+                            <textarea id="comment" name="comment" rows="4" required></textarea>
+                        </div>
+                        <button type="submit">Gửi đánh giá</button>
+                    </form>
+                </div>
+            </div>
+        
+     
+    
+        <script>
+            function showTab(tabId) {
+                document.getElementById('description').style.display = 'none';
+                document.getElementById('reviews').style.display = 'none';
+                document.getElementById(tabId).style.display = 'block';
+            }
+        </script>
+          
+          <div id="listsp ">
+            <h2>SẢN PHẢM TƯƠNG TỰ</h2>
+            <div class="data " id="data">
+                <div class="sp" idsp="1" gia="550000">
+                    <img class="image " src="../img/anh1.webp" />
+                    <div class="name ">Xoài thái</div>
+                    <br>
+                    <div class="price " id="gia "><del>1,050,000₫</del>550,000₫</div>
+                    <div class="circle">
+                        <span>-50%</span>
+                    </div>
+                    <div class="sp-overlay">
+                        <div class="sp-buttons">
+                            <button class="sp-button-1" id="themvaogh">Thêm vào giỏ hàng</button>
+                            <button class="sp-button">Chi tiết sản phẩm</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp" idsp="2" gia="450000">
+                    <img class="image " src="../img/anh1.webp" />
+                    <div class="name ">Fall Guy </div>
+                    <br>
+                    <div class="price " id="gia "><del>1,050,000₫</del>550,000₫</div>
+                    <div class="circle ">
+                        <span>-50%</span>
+                    </div>
+                    <div class="sp-overlay ">
+                        <div class="sp-buttons ">
+                            <button class="sp-button-1 " id="themvaogh ">Thêm vào giỏ hàng</button>
+                            <button class="sp-button ">Chi tiết sản phẩm</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp " idsp="3 " gia="560000 ">
+                    <img class="image " src="../img/anh1.webp" />
+                    <div class="name ">DARK SOUL </div>
+                    <br>
+                    <div class="price " id="gia "><del>1,050,000₫</del>550,000₫</div>
+                    <div class="circle ">
+                        <span>-50%</span>
+                    </div>
+                    <div class="sp-overlay ">
+                        <div class="sp-buttons ">
+                            <button class="sp-button-1 " id="themvaogh ">Thêm vào giỏ hàng</button>
+                            <button class="sp-button ">Chi tiết sản phẩm</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sp " idsp="4 " gia="50000 ">
+                    <img class="image " src="../img/anh1.webp" />
+                    <div class="name ">BATTLE</div>
+                    <br>
+                    <div class="price " id="gia "><del>1,050,000₫</del>550,000₫</div>
+                    <div class="circle ">
+                        <span>-50%</span>
+                    </div>
+                    <div class="sp-overlay ">
+                        <div class="sp-buttons ">
+                            <button class="sp-button-1 " id="themvaogh ">Thêm vào giỏ hàng</button>
+                            <button class="sp-button ">Chi tiết sản phẩm</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+        </main>
+        <footer>
+            <div class="column ">
+                <h3>NHỌNG SHOP </h3>
+                <p>NHONGSHOP  là một điểm đến lý tưởng cho những người yêu thích xoài Cam Lâm – loại trái cây nổi tiếng từ vùng đất mộc mạc của Việt Nam. Với cam kết về chất lượng và nguồn gốc, chúng tôi cung cấp một loạt các sản phẩm đa dạng từ xoài Cam Lâm, từ trái tươi ngon đến các sản phẩm chế biến chất lượng cao.
+                </p>
+            </div>
+            <div class="column ">
+                <h3>DANH MỤC SẢN PHẨM</h3>
+                <ul>
+                    <li>Sản phẩm hot</li>
+                    <li>Xoài ngọt</li>
+                    <li>Xoài chua</li>
+                    <li>Sản phẩm new</li>
+                    <li>Sản phẩm nổi bật</li>
+       
+                </ul>
+            </div>
+            <div class="column ">
+                <h3>CHÍNH SÁCH BÁN HÀNG</h3>
+                <ul>
+                    <li>Phương thức thanh toán</li>
+                    <li>Phương thức nhận sản phẩm</li>
+                   <a  href="csqrt.html"><li>chính sách quyền riêng tư</li></a> 
+                   <a href="csbm.html">  <li >Chính sách bảo mật</li></a> 
+                   <a href="csmh.html">  <li >Chính sách đổi trả</li></a> 
+                </ul>
+            </div>
+            <div class="column ">
+                <h3>Thông tin liên hệ: Shop NHONGSHOP.vn</h3>
+                <p>Địa chỉ: Cam lam -khanh Hoa - Viet Nam</p>
+                <p>Số điện thoại:052 306 0080</p>
+                <p>Fanpage: <a href="https://www.facebook.com/ezcode.vn ">Facebook.com/nhongshop</a></p>
+            </div>
+            <section class="iconft">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-telegram"></i>
+            </section><br>
+            <br>
+        
+       <section>     <p>© Copyright by Nhongshop</p></section>
+        </footer>
+        </div>
+</body>
+
+</html>

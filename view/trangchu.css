@@ -1,0 +1,11 @@
+b {
+    color: dimgray;
+}
+
+li a :hover {
+    font-size: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+}

@@ -1,0 +1,30 @@
+b {
+    color: dimgray;
+}
+
+li a :hover {
+    font-size: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+.dropbtn1 {
+    background-color: #ffa70e;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 400px; /* Điều chỉnh độ rộng của div để làm thanh tùy chọn */
+    text-align: center; /* Căn giữa nội dung trong div */
+    border-radius: 10px;
+    margin: 20px 0px;
+}   
+.listcate{
+    background-color: #ffffff;
+    color: rgb(223, 157, 15);
+    font-size: 20px;
+    width:300px;
+    border:none;
+}
